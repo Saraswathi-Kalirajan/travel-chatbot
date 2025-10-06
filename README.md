@@ -1,11 +1,6 @@
 
 ---
 
-### ✅ **Corrected Version (Ready for GitHub)**
-
-Here’s your final clean version 👇  
-(copy this directly into your `README.md`)
-
 ````markdown
 # 🌏 Travel Assistant Chatbot
 
