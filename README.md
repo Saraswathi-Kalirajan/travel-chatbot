@@ -1,100 +1,109 @@
 
----
 
 ````markdown
 # 🌏 Travel Assistant Chatbot
 
-A conversational **Travel Assistant Chatbot** built using **Streamlit**, **FastAPI**, and **Google Gemini LLM**.  
-The chatbot can answer general questions, provide empathetic responses, and help users with travel-related queries.
+## 🔹 Project Overview
+The **Travel Assistant Chatbot** is a conversational AI web application built using **Streamlit**, **FastAPI**, and **Google Gemini LLM**.  
+It provides users with travel-related information, answers general queries, and offers empathetic, context-aware responses.  
+The system includes both a **frontend UI** and a **backend API** for seamless interaction.
 
 ---
 
-## Features
-
+## 🔹 Features
 - Interactive chatbot interface using **Streamlit**  
 - Backend API built with **FastAPI**  
-- Conversation managed by **LangGraph**  
-- AI responses powered by **Google Gemini**  
-- Supports session-based chat history  
-- Empathetic and context-aware responses
+- AI-powered responses using **Google Gemini LLM**  
+- Session-based chat history support  
+- Empathetic and context-aware responses  
+- Easy customization via LangGraph conversation flow  
 
 ---
 
-## Demo
-
-1. **Run backend**:
-
-```bash
-python -m uvicorn backend:app --reload --port 8000
-```
-
-2. **Run frontend**:
-
-```bash
-python -m streamlit run frontend.py
-```
-
-3. Open your browser at [http://localhost:8501](http://localhost:8501) and start chatting!
+## 🔹 Technologies Used
+- **Frontend:** Streamlit  
+- **Backend:** FastAPI  
+- **AI Model:** Google Gemini  
+- **Conversation Flow:** LangGraph  
+- **Language:** Python  
+- **Environment:** `.env` configuration file  
 
 ---
 
-## Installation
+## 🔹 How to Run Locally
 
-1. Clone the repository:
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Saraswathi-Kalirajan/travel-chatbot.git
+   cd travel-chatbot
+````
 
-```bash
-git clone https://github.com/<your-username>/travel-chatbot.git
-cd travel-chatbot
+2. **Create a Virtual Environment (optional but recommended):**
+
+   ```bash
+   python -m venv venv
+   # Windows
+   venv\Scripts\activate
+   # macOS/Linux
+   source venv/bin/activate
+   ```
+
+3. **Install Dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set Up Environment Variables:**
+   Create a `.env` file in the root directory and add:
+
+   ```
+   GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
+   GOOGLE_MODEL=models/gemini-2.5-flash
+   BACKEND_URL=http://localhost:8000
+   ```
+
+5. **Run the Backend (FastAPI):**
+
+   ```bash
+   python -m uvicorn backend:app --reload --port 8000
+   ```
+
+6. **Run the Frontend (Streamlit):**
+
+   ```bash
+   python -m streamlit run frontend.py
+   ```
+
+7. **Open in Browser:**
+   Visit [http://localhost:8501](http://localhost:8501) to start chatting with your Travel Assistant!
+
+---
+
+## 🔹 Project Structure
+
 ```
-
-2. Create a virtual environment (optional but recommended):
-
-```bash
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
-```
-
-3. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Create a `.env` file in the project root with the following content:
-
-```
-GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
-GOOGLE_MODEL=models/gemini-2.5-flash
-BACKEND_URL=http://localhost:8000
+travel-chatbot/
+│
+├── backend.py         # FastAPI backend (handles chat requests)
+├── frontend.py        # Streamlit UI for chatbot interaction
+├── listmodels.py      # Lists available Gemini models
+├── run_all.bat        # Optional script to start backend & frontend
+├── requirements.txt   # Project dependencies
+├── .env               # Environment variables (not shared publicly)
+└── README.md          # Project documentation
 ```
 
 ---
 
-## Project Files
+## 🔹 Future Improvements
 
-* `backend.py` — FastAPI backend serving `/chat` endpoint  
-* `frontend.py` — Streamlit frontend for the chatbot UI  
-* `listmodels.py` — Script to list available Gemini models  
-* `run_all.bat` — Optional batch file to start backend & frontend together  
-* `.env` — Stores your API key and model (excluded from GitHub)
-
----
-
-## Usage
-
-1. Start backend and frontend as described in the demo section.  
-2. Type a message in the Streamlit input box or test via Swagger UI at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).  
-3. Enjoy your interactive Travel Chatbot!
+* Add user authentication and personalized travel recommendations
+* Include destination images or maps via APIs
+* Integrate real-time weather or currency conversion APIs
+* Deploy the chatbot online using **Render**, **Vercel**, or **Google Cloud**
 
 ---
 
-## Notes
 
-* Make sure your Gemini API key is valid.  
-* Use `listmodels.py` to see all available Gemini models.  
-* You can customize the chatbot by modifying the LangGraph conversation flow.
-
----
+```
