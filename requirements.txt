@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+requests
+streamlit
+python-dotenv
+# Optional / only if you want Google GenAI SDK or LangGraph:
+# google-generativeai           # (pip name may vary depending on release)
+# langgraph
+# google-genai or genai         # some environments expose 'from google import genai'
